@@ -16,7 +16,7 @@ function Header() {
   }
   return (
     <>
-      <header className='h-20 flex items-center justify-between'>
+      <header className='h-20 bg-white flex items-center justify-between '>
       <Link to={'/'}>
         <div className='flex items-center gap-1 ml-10'>
            <Box className=" w-10 h-10"><StorefrontIcon style={{ fontSize: '40px' }} /></Box>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 
 
 function Featured() {
@@ -60,16 +61,18 @@ function Featured() {
                             isfeautured.map((feauture) => {
                                 return (
                                             <>
-                                                <div key={feauture.id} className=' w-[390px] border-2 border-gray-900 m-auto h-[400px] rounded-lg sm:w-[290px] mt-5 hover:scale-105 transition-all delay-100 bg-gray-200'>
-                                                    <div className=' flex flex-col jusstify-around h-80'>
-                                                        <p className=' border-2 m-5 text-gray-500  text-center w-28 font-thin text0sm rounded-2xl border-gray-400'>Featured</p>
-                                                        <img className='  scale-100 h-[260px] m-auto' src={feauture.images[1]} alt="itemimage" />
+                                                <Link to={`/product/${feauture.id}`}>
+                                                    <div key={feauture.id} className=' w-[390px] border-2 border-gray-200 m-auto h-[400px] rounded-lg sm:w-[290px] mt-5 hover:scale-105 transition-all delay-100 bg-gray-100'>
+                                                        <div className=' flex flex-col jusstify-around h-80'>
+                                                            <p className=' border-2 m-5 text-gray-500  text-center w-28 font-thin text0sm rounded-2xl border-gray-400'>Featured</p>
+                                                            <img className='  scale-100 h-[260px] m-auto rounded-xl' src={feauture.images[1]} alt="itemimage" />
+                                                        </div>
+                                                        <div className=' mt-4 flex justify-between'>
+                                                            <p className='font-light ml-5'>{feauture.title}</p>
+                                                            <p className='text-gray-500 mr-5'> ${feauture.price}.00</p>
+                                                        </div>
                                                     </div>
-                                                    <div className='border-2 mt-4 flex justify-between'>
-                                                        <p className='font-light ml-5'>{feauture.title}</p>
-                                                        <p className='text-gray-500 mr-5'> ${feauture.price}.00</p>
-                                                    </div>
-                                                </div>
+                                                </Link>
 
 
                                             </>

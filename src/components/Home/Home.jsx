@@ -12,15 +12,15 @@ function Home() {
   return (
     <>
       <div>
-        <h1 className='font-semibold text-5xl w-[590px] sm:w-[400px] ml-5'>Elevate your lifestyle with premuim essentials</h1>
+        <h1 className='font-semibold text-5xl w-[590px] sm:w-[300px] ml-5'>Elevate your lifestyle with premuim essentials</h1>
         <div className='flex items-center sm:items-start sm:flex sm:flex-col justify-between'>
-          <p className='ml-5 w-96 sm:w-80 font-thin text-lg mt-5'>Elevate your daily routine with our meticulously selected premuim goods and curated essentials.</p>
+          <p className='ml-3 w-96 sm:w-72 font-thin text-lg mt-5'>Elevate your daily routine with our meticulously selected premuim goods and curated essentials.</p>
           <Link to={'/allproducts'}><p className='border-2 mr-5 sm:mr-0 border-gray-400 font-normal w-60 h-16 rounded-[300px] text-center py-4 mt-5'>Browse all products</p></Link>
         </div>
         <Featured />
 
         <h1 className='text-4xl font-semi-bold mt-24  ml-5 '>Browser by categories</h1>
-        <p className='text-gray-600 mb-10 text-lg w-[500px] ml-5 sm:w-80 mt-3'>Explore our diverse range of categories tailored to meet your specific needs and interest.</p>
+        <p className='text-gray-600 mb-10 text-lg w-[400px] ml-5 sm:w-72 mt-3'>Explore our diverse range of categories tailored to meet your specific needs and interest.</p>
 
 
         <div className=' gap-10 p-5 flex sm:flex-col h-fit pb-7 w-full '>
@@ -34,7 +34,7 @@ function Home() {
 
           </div>
 
-          <div className='flex gap-7 flex-wrap'>
+          <div className='flex gap-7 z-20 flex-wrap'>
             <div className='w-[600px] rounded-2xl h-60 flex sm:flex-col sm:w-[100%] sm:h-[400px] bg-gray-100 p-5 '>
               <div>
                 <h1 className='text-gray-800 font-semibold mb-5'>Displays</h1>

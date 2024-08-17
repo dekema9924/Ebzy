@@ -9,7 +9,7 @@ import map from '../assets/images/map.png'
 function Footer() {
     return (
         <>
-            <div className='p-10 sm:w-full m-auto w-[1390px] bg-gray-100  flex sm:flex-col justify-around rounded-2xl'>
+            <footer className='p-10 sm:w-full m-auto w-[1390px] bg-gray-100 flex sm:flex-col justify-around rounded-2xl'>
                 <div className=' sm:w-full sm:p-5  w-96 flex flex-col gap-5'>
                     <div className='flex items-center '>
                         <Box className=" w-10 h-10"><StorefrontIcon style={{ fontSize: '40px' }} /></Box>
@@ -47,7 +47,7 @@ function Footer() {
                 <div>
                     <img className=' w-80 sm:w-full' src={map} alt="locationImg" />
                 </div>
-            </div>
+            </footer>
         </>
     )
 }
