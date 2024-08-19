@@ -5,14 +5,13 @@ import applewatch from '../../assets/images/applewatch.png'
 import display from '../../assets/images/display.png'
 import shoes from '../../assets/images/shoes.png'
 import furniture from '../../assets/images/furniture.png'
-import Newsletter from './Newsletter'
 
 
 function Home() {
   return (
     <>
       <div>
-        <h1 className='font-semibold text-5xl w-[590px] sm:w-[300px] ml-5'>Elevate your lifestyle with premuim essentials</h1>
+        <h1 className='font-semibold text-5xl w-[590px] sm:w-[300px] ml-5 mt-10'>Elevate your lifestyle with premuim essentials</h1>
         <div className='flex items-center sm:items-start sm:flex sm:flex-col justify-between'>
           <p className='ml-3 w-96 sm:w-72 font-thin text-lg mt-5'>Elevate your daily routine with our meticulously selected premuim goods and curated essentials.</p>
           <Link to={'/allproducts'}><p className='border-2 mr-5 sm:mr-0 border-gray-400 font-normal w-60 h-16 rounded-[300px] text-center py-4 mt-5'>Browse all products</p></Link>
@@ -40,7 +39,7 @@ function Home() {
                 <h1 className='text-gray-800 font-semibold mb-5'>Displays</h1>
                 <p className=' w-[250px] sm:w-60 font-thin'>Experience crystal-clear clarity and vibrant visuals with our Displays</p>
                 <button className='border-2 border-gray-700 px-10 py-3 rounded-3xl font-thin mt-5 hover:bg-gray-200 transition-all delay-200 ' >
-                  <Link to={'/electronics'}>Electronics</Link>
+                  <Link to={'/allproducts'}>Electronics</Link>
                 </button>
               </div>
 
@@ -51,7 +50,7 @@ function Home() {
             <div className='flex h-[250px] rounded-2xl bg-gray-100 sm:w-full flex-col justify-center items-center  w-[270px] '>
               <img className='w-[300px]' src={shoes} alt="" />
               <button className='border-2 w-[130px] relative bottom-16 z-50 bg-white border-gray-700 px-10 py-3 rounded-3xl font-thin mt-5 hover:bg-gray-200 transition-all delay-200 ' >
-                <Link to={'/shoes'}>Shoes</Link>
+                <Link to={'/allproducts'}>Shoes</Link>
               </button>
 
             </div>
@@ -59,7 +58,7 @@ function Home() {
             <div className='flex rounded-2xl bg-gray-100 h-[250px] flex-col sm:w-full justify-center items-center w-[270px] '>
               <img className='w-[170px]' src={furniture} alt="" />
               <button className='border-2 w-[130px] relative bottom-16 z-50 bg-white border-gray-700 px-10 py-3 rounded-3xl font-thin mt-5 hover:bg-gray-200 transition-all delay-200 ' >
-                <Link to={'/shoes'}>Furniture</Link>
+                <Link to={'/allproducts'}>Furniture</Link>
               </button>
 
             </div>
@@ -67,7 +66,6 @@ function Home() {
 
         </div>
       </div>
-      <Newsletter />
     </>
   )
 }

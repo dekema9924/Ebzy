@@ -50,7 +50,7 @@ function Featured() {
             {
                 !isLoading ? <>
                     <Carousel 
-                    responsive={responsive}
+                      responsive={responsive}
                       swipeable={true}
                       itemClass="carousel-item-padding-40-px"
                       partialVisible={false}
@@ -62,12 +62,12 @@ function Featured() {
                                 return (
                                             <>
                                                 <Link to={`/product/${feauture.id}`}>
-                                                    <div key={feauture.id} className=' w-[390px] border-2 border-gray-200 m-auto h-[400px] rounded-lg sm:w-[290px] mt-5 hover:scale-105 transition-all delay-100 bg-gray-100'>
+                                                    <div key={feauture.id} className=' w-[390px] border-2 border-gray-300 m-auto h-[400px] rounded-lg sm:w-[290px] mt-5 hover:scale-105 transition-all delay-100 bg-gray-100'>
                                                         <div className=' flex flex-col jusstify-around h-80'>
                                                             <p className=' border-2 m-5 text-gray-500  text-center w-28 font-thin text0sm rounded-2xl border-gray-400'>Featured</p>
-                                                            <img className='  scale-100 h-[260px] m-auto rounded-xl' src={feauture.images[1]} alt="itemimage" />
+                                                            <img className='  scale-100 h-[260px] m-auto' src={feauture.images[1]} alt="itemimage" />
                                                         </div>
-                                                        <div className=' mt-4 flex justify-between'>
+                                                        <div className='border-2 mt-4 flex justify-between'>
                                                             <p className='font-light ml-5'>{feauture.title}</p>
                                                             <p className='text-gray-500 mr-5'> ${feauture.price}.00</p>
                                                         </div>

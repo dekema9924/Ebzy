@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 
 function Allproducts() {
@@ -11,10 +12,15 @@ function Allproducts() {
   const [isLoading, setLoading] = useState(true);
   const [allproducts, setallproducts] = useState(true);
   const [category, setCategory] = useState("All products")
+  const [isclicked, setClicked] = useState(false)
 
   const Handlecategory = (e)=>{
     setCategory(e.target.value)
     console.log(e.target.value)
+  }
+
+  const HandleClick= ()=>{
+      setClicked((prev)=>!prev)
   }
 
   useEffect(() => {
@@ -53,6 +59,8 @@ function Allproducts() {
             setLoading(false)
           })
       }
+      window.scrollTo(0, 0);
+
      
       
       
@@ -65,7 +73,10 @@ function Allproducts() {
       <h1 className='font-bold text-2xl'>Shop</h1>
       <p className='font-thin  w-80 my-3'>Check out our full collection of products tailored to your needs </p>
       <form className='flex flex-wrap gap-3'>
-        <SearchIcon />
+        <SearchIcon  className='cursor-pointer' onClick={HandleClick}/>
+        {
+          isclicked ? <Search isclicked={isclicked} /> : ""
+        }
         <input type='text' readonly='readonly' value={category}  className='border-2 outline-none cursor-default  bg-black text-white rounded-2xl px-4  font-thin'/>
         <input onClick={Handlecategory} type='text' readonly='readonly' value="Electronics" className='border-2 outline-none cursor-default border-gray-300 rounded-2xl px-4  font-thin'/>
         <input onClick={Handlecategory} type='text' readonly='readonly' value="Shoes" className='border-2 outline-none border-gray-300 cursor-default rounded-2xl px-4 font-thin'/>

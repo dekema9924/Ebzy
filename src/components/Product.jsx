@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Accordian from './pages/Accordian'
+import { RelatedContext } from './Context/RelatedContext';
+import Related from './Categories/Related';
 
 
 
@@ -19,6 +21,8 @@ function Buy() {
         setproduct(response.data)
         console.log(response.data)
       })
+      window.scrollTo(0, 0);
+
   }, [])
 
 
@@ -49,6 +53,17 @@ function Buy() {
           <Accordian/>
         </div>
 
+      </div>
+
+      <div>
+       {
+        !isLoading ? <>
+        <RelatedContext.Provider value={isproduct.category.id} >
+            <Related/>
+        </RelatedContext.Provider>
+        </>:
+        ""
+       }
       </div>
     </>
   )
