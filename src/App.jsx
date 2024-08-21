@@ -10,6 +10,7 @@ import Product from './components/Product'
 import Newsletter from './components/Home/Newsletter'
 
 
+
 function App() {
   return (
     <>
@@ -22,8 +23,6 @@ function App() {
           <Route path='/blog' element={<Blog/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/product/:id' element={<Product/>}/>
-          
-
       </Routes>
         </div>
         <Newsletter/>

@@ -11,9 +11,10 @@ import { Link } from 'react-router-dom';
 
 
 function Related() {
-    const category_id = useContext(RelatedContext)
+    const categoryId = useContext(RelatedContext)
+
     const [isRelated, setRelated] = useState();
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setLoading] = useState(true);
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -34,17 +35,20 @@ function Related() {
 
 
     useEffect(() => {
-        axios(`https://api.escuelajs.co/api/v1/products/?categoryId=${category_id}`)
+        axios(`https://api.escuelajs.co/api/v1/products/?categoryId=${categoryId}`)
             .then((response) => {
                 setRelated(response.data)
-                setLoading(false)
-            })
+                setLoading(false) 
+        })
+        // window.scrollTo(0, 0)
     }, [])
+
+
 
     return (
         <>
-            <div className='border-2'>
-                <h1 className='text-2xl font-medium text-gray-800  w-48 ml-16 '>Related products</h1>
+            <div className='border-b-2'>
+                <h1 className='text-3xl font-medium text-gray-800 w-72 ml-16 relative top-16  '>Related products</h1>
                 {
                     !isLoading ? <>
                         <Carousel
@@ -54,14 +58,13 @@ function Related() {
 
                             {
                                 isRelated.map((products) => {
-                                    return (
+                                    return ( 
                                         <>
-                                            <Link to={`/product/${products.id}`}>
-                                                <div key={products.id} className='w-96 p-3 mt-20 h-[460px] '>
-                                                <Link to={`/product/${products.id}`}>
+                                            <Link to={`/product/${products.id}`} key={products.id}>
+                                                <div className='w-96 p-3 mt-20 h-[460px] '>
                                                 <img className='w-[400px] rounded-2xl h-[400px]' src={products.images[0]} alt="" />
 
-                                                </Link>
+                                          
                                                     <div className='flex justify-between mt-3'>
                                                         <p className=''>{products.title}</p>
                                                         <p className='font-thin text-gray-700'>$<span>{products.price}</span>.00</p>

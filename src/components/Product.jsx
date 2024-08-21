@@ -14,16 +14,22 @@ function Buy() {
   const [isproduct, setproduct] = useState({})
   const [isLoading, setLoading] = useState(true)
 
+
   useEffect(() => {
     axios(`https://api.escuelajs.co/api/v1/products/${id}`)
       .then((response) => {
         setLoading(false)
         setproduct(response.data)
-        console.log(response.data)
+  
       })
+
       window.scrollTo(0, 0);
 
-  }, [])
+
+
+
+
+  }, [id])
 
 
 
@@ -50,20 +56,22 @@ function Buy() {
             Return within 45 days of purchase. Duties & taxes are non-refundable.
             Warranty
           </p>
-          <Accordian/>
+          <Accordian />
         </div>
 
       </div>
 
       <div>
-       {
-        !isLoading ? <>
-        <RelatedContext.Provider value={isproduct.category.id} >
-            <Related/>
-        </RelatedContext.Provider>
-        </>:
-        ""
-       }
+        {
+          !isLoading ? <>
+            <RelatedContext.Provider
+              value={isproduct.category.id}
+            >
+              <Related />
+            </RelatedContext.Provider>
+          </> :
+            ""
+        }
       </div>
     </>
   )
